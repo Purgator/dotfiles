@@ -1,0 +1,18 @@
+Installer dotnet
+
+Pour Arch :
+
+Depuis aur :
+
+dotnet-cli dotnet dotnet-sdk
+
+Dans vscode installer l'extension C# de Microsoft
+
+Créer un projet :
+dotnet new console
+
+lancer le projet :
+dotnet run
+
+Débugger :
+https://github.com/OmniSharp/omnisharp-vscode/wiki/Installing-the-.NET-Core-Debugger-on-Arch-Linux

@@ -1,0 +1,64 @@
+-----------------------
+dbus
+
+dbus GUI
+qdbusviewer-qt4
+d-feet
+
+Display amor dbus paths
+busctl --user tree org.kde.amor
+
+Send dbus message to Amor and call method showMessage.
+dbus-send --print-reply --dest="org.kde.amor" /Amor org.kde.amor.showMessage string:"test" int32:10000
+
+
+-----------------------
+lock screen
+
+Edit : /usr/bin/xflock4
+command to lock
+dm-tool lock
+
+
+-----------------------
+weechat
+
+Alt + = : toogle filters
+Alt + L : Show / Hide UI
+
+Smart filter (only show relevant joins and quits)
+/filter add irc_smart * irc_smart_filter *
+
+
+-----------------------
+git dotfiles
+
+https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
+
+init project
+
+git init --bare "$HOME/.dfcfg"
+alias dfcfg='/usr/bin/git --git-dir=$HOME/.dfcfg/ --work-tree=$HOME'
+dfcfg config --local status.showUntrackedFiles no
+echo "alias dfcfg='/usr/bin/git --git-dir=$HOME/.dfcfg/ --work-tree=$HOME'" >> "$HOME/.bashrc"
+
+echo -e "# Purgator dotfiles\n**Warning :** Don't random clone it into your home directory, you should better fork it into a separated folder first." > "$HOME/.dfcfg/README.md"
+echo "For real, who cares ? I don't give a fart." > "$HOME/.dfcfg/License"
+
+dfcfg add "$HOME/.dfcfg/README.md"
+dfcfg add "$HOME/.dfcfg/License"
+
+dfcfg commit -m "First commit"
+
+host on github
+
+dfcfg remote add origin git@github.com:Purgator/dotfiles.git
+dfcfg remote -v
+
+curl -u 'Purgator' https://api.github.com/user/repos -d '{"name":"dotfiles"}'
+
+dfcfg push --set-upstream origin master
+
+dfcfg push
+
+run dfcfg instead of git to manage dotfiles

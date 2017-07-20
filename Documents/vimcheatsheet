@@ -1,0 +1,71 @@
+Executer une commande dans le shell : !cmd
+exemple : :!ls :w !ls
+Le premier affiche le terminal alors que le second affiche le résultat dans la fenetre de vim en bas
+
+Executer une commande et afficher le résultat dans vim
+:read !ls
+:read !date
+
+Executer la ligne courrante
+:.w !bash
+
+Executer une commande sur le texte dans vim
+Selectionner le texte puis :!cmd
+
+Executer une commmande et afficher le résultat dans le terminal (supprime la commande)
+:!bash # si selection. Sinon va simplement lancer bash
+:. !bash # current line
+
+
+Supprimer tout à l'intérieur des guillemets ou quotes
+di'
+
+Supprimer tout à l'intérieur des guillemets ou quotes et passer en mode insertion
+ci'
+
+Selectionner tout à l'intérieur des guillemets ou quotes
+vi'
+
+Supprimer tout à l'intérieur de balises
+dit
+
+vim-plug
+
+
+
+cgn
+cwn
+
+trouver un moyen d'executer une commande avec un alias. La commande est écrite dans le fichier texte, on l'execute avec :.w !bash
+
+
+
+Incrémenter (resp. décrémenter un nombre en mode normal)
+CTRL + a ( CTRL + x)
+
+Complétion de phrase
+
+
+Supprimer jusqu'au caratère X
+dtX
+
+Supprimer en arrière jusqu'au caractère X, incluant le caractère sous le curseur
+dvTX
+
+Supprimer en arrière jusqu'au caractère X, incluant le caractère sous le curseur et incluant le caractère de destination
+dvFX
+
+Depuis le mode insert, passer en mode normal pour une commande
+ctrl O
+
+
+Toogle case
+~
+gu
+gU
+
+Marques
+Poser
+ma
+Aller à
+'a

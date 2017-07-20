@@ -1,0 +1,3 @@
+bash: :wq: command not found
+
+wget -q --spider imgur.com && echo ok || echo ko

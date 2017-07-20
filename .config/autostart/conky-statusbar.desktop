@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=conky-statusbar
+Comment=
+Exec=conky -p10 -d -c /home/purgator/.config/conky/conky-statusbar.conf
+StartupNotify=false
+Terminal=false
+Hidden=false

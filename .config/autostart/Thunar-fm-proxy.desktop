@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Thunar-fm-proxy
+Comment=Firefox Download : Show in file explorer pre-select the specified file.
+Exec=/home/purgator/.tweaks/thunar-fm-proxy
+OnlyShowIn=XFCE;
+StartupNotify=false
+Terminal=false
+Hidden=false
+

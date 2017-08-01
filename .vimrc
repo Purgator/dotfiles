@@ -35,7 +35,10 @@ Plugin 'ervandew/supertab'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'Valloric/YouCompleteMe'
-
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-commentary'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -73,7 +76,7 @@ set smartcase
 set scrolloff=5
 
 " Change directory when open a file
-set autochdir
+" set autochdir
 
 " Use same clipboard as selection system clipboard ('*' in vim)
 set clipboard=unnamed
@@ -276,3 +279,9 @@ set rtp^=/usr/share/vim/vimfiles/
 if has('nvim')
 	set inccommand=split
 endif
+
+
+" TODO:
+" Add date formats to speeddating. See
+" https://github.com/tpope/vim-speeddating/blob/master/plugin/speeddating.vim
+" maybe do a pull request or fork it

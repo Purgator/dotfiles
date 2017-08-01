@@ -10,6 +10,10 @@ HISTFILESIZE=10000
 HISTSIZE=10000
 PS1='[\u@\h \W]\$ '
 
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
 # Additionnal auto completion
 
 if [ -f /etc/bash_completion ]; then

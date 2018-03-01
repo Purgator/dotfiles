@@ -16,3 +16,13 @@ dotnet run
 
 Débugger :
 https://github.com/OmniSharp/omnisharp-vscode/wiki/Installing-the-.NET-Core-Debugger-on-Arch-Linux
+
+
+Extensions supplémentaires :
+C# Extensions
+Auteur : jchannon
+Permet de créer des classes, interfaces etc.
+
+C# XML Documentation Comments
+Auteur : Keisuke Kato
+Support de la doc ///

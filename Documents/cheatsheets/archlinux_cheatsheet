@@ -1,0 +1,148 @@
+-----------------------
+dbus
+
+dbus GUI
+qdbusviewer-qt4
+d-feet
+
+Display amor dbus paths
+busctl --user tree org.kde.amor
+
+Send dbus message to Amor and call method showMessage.
+dbus-send --print-reply --dest="org.kde.amor" /Amor org.kde.amor.showMessage string:"test" int32:10000
+
+
+-----------------------
+lock screen
+
+Edit : /usr/bin/xflock4
+command to lock
+dm-tool lock
+
+
+-----------------------
+weechat
+
+Alt + = : toogle filters
+Alt + L : Show / Hide UI
+
+Smart filter (only show relevant joins and quits)
+/filter add irc_smart * irc_smart_filter *
+
+
+-----------------------
+git dotfiles
+
+https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
+
+init project
+
+git init --bare "$HOME/.dfcfg"
+alias dfcfg='/usr/bin/git --git-dir=$HOME/.dfcfg/ --work-tree=$HOME'
+dfcfg config --local status.showUntrackedFiles no
+echo "alias dfcfg='/usr/bin/git --git-dir=$HOME/.dfcfg/ --work-tree=$HOME'" >> "$HOME/.bashrc"
+
+echo -e "# Purgator dotfiles\n**Warning :** Don't random clone it into your home directory, you should better fork it into a separated folder first." > "$HOME/.dfcfg/README.md"
+echo "For real, who cares ? I don't give a fart." > "$HOME/.dfcfg/License"
+
+dfcfg add "$HOME/.dfcfg/README.md"
+dfcfg add "$HOME/.dfcfg/License"
+
+dfcfg commit -m "First commit"
+
+host on github
+
+dfcfg remote add origin git@github.com:Purgator/dotfiles.git
+dfcfg remote -v
+
+curl -u 'Purgator' https://api.github.com/user/repos -d '{"name":"dotfiles"}'
+
+dfcfg push --set-upstream origin master
+
+dfcfg push
+
+run dfcfg instead of git to manage dotfiles
+
+
+
+-----------------------
+pacman
+
+# remove orphans
+pacman -Rns $(pacman -Qtdq)
+
+# Check pacman cache size (dry run)
+paccache -dk0
+paccache -dvk0
+# delete uninstalled packages cache
+paccache -ruk0
+# delete all pkg but 3 most recents
+paccache -rk3
+
+# Cache location
+ls -l /var/cache/pacman/pkg/
+# Sort by size
+du -h /var/cache/pacman/pkg/* | sort -hr | less
+
+# pacnew management
+find /etc -name '*.pacnew*' 2>/dev/null 
+kdiff3 --cs CreateBakFiles=0 -m -o /etc/file /etc/file.pacnew /etc/file
+rm /etc/file.pacnew
+
+-----------------------
+vim
+
+Install Vundle
+require curl
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+To install plugins :
+:PluginInstall
+
+
+
+-----------------------
+WiFi
+
+rfkill
+# Switch on/off WiFi
+rfkill [un]block 1
+
+Find a way to create a deamon that run block and unblock when connection issue is detected.
+
+
+-----------------------
+Disable xsession-errors to /tmp (tmpfs)
+
+
+-----------------------
+Firefox
+
+restore session
+copy upgrade.js-xxxxxxxx from /home/purgator/.mozilla/firefox/4x9p1uhc.default/sessionstore-backups
+to /home/purgator/.mozilla/firefox/4x9p1uhc.default/sessionstore.js
+
+
+-----------------------
+Weechat
+
+alt + l show only chat for c/c
+
+
+-----------------------
+Conky
+
+TODO: Pour vérifier que internet est up/down, faire un ping google, si ça ne fonctionne pas, faire un 2e ping vers google (ou autre) pour valider que ça ne fonctionne effectivement pas.
+
+Dans un cas général, il faudrait déporter les programmes vers des scripts dans le dossier tweak, écrire le résultat dans /tmp. Conky ne doit que lire le fichier avec le résultat directement généré par les scripts de tweak.
+
+Ajouter un % de stabilité de connexion sur la dernière heure en faisant un ratio up/down
+
+-----------------------
+Fonts
+Install with pacman
+Check the wiki : https://wiki.archlinux.org/index.php/fonts
+
+
+-----------------------
+Trouver un moyen standard de faire un change layout au lieu d'utiliser un raccourci clavier custom. Pour passer de qwerty à azerty

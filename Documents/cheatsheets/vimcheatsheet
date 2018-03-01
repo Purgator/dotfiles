@@ -1,0 +1,89 @@
+Install Vundle
+require curl
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+To install plugins :
+:PluginInstall
+
+
+
+Execute command into the shell : !cmd
+example : :!ls :w !ls
+The first one display the terminal while the second one display the output in the bottom window
+
+Execute a command and display output inside vim
+:read !ls
+:read !date
+
+Execute current line
+:.w !bash
+
+Execute a command on a text inside vim
+Select text then type :!cmd
+
+Execute a command and display the output on the terminal (delete the command)
+:!bash # Execute selection. Else just run bash
+:. !bash # current line
+
+
+Delete all inside single or double quotation mark
+di'
+
+Delete all inside single or double quotation mark and enter insert mode
+ci'
+
+Select all inside single or double quotation mark
+vi'
+
+
+Delete all inside tag like html <>
+dit
+
+vim-plug
+
+
+
+cgn
+cwn
+
+Find a way to execute a command with an alias (from .bashrc). The command is written inside a text file, I execute it with :.w !bash
+
+
+
+Increment (resp. decrement a number in normal mode)
+CTRL + a ( CTRL + x)
+
+Line (sentence) completion
+
+path completion
+
+
+Delete to char X
+dtX
+
+Delete backward to char X, including the char under the cursor
+dvTX
+
+Delete backward to char X, including the char under the cursor et including the targeted char
+dvFX
+
+From insert mode, switch to normal mode for one command
+ctrl O
+
+
+Toogle case
+~
+gu
+gU
+
+Set mark
+ma
+Jump to mark
+'a
+
+
+Write current file name on current line
+read !echo %
+
+Delete all lines but this
+:g!/text-to-keep/d

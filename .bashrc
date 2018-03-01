@@ -13,12 +13,20 @@ PS1='[\u@\h \W]\$ '
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+# Ignore duplicates
+export HISTCONTROL=ignoreboth:erasedups
+
+export HISTTIMEFORMAT="%d-%m-%Y %T "
 
 # Additionnal auto completion
 
 if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
+
+# Disable Software Flow Control to not be disturbed by Ctrl-S Ctrl-Q in terminals
+stty -ixon
+
 
 # Aliases
 

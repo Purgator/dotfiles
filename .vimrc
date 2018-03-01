@@ -39,6 +39,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-commentary'
+Plugin 'zhou13/vim-easyescape'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -128,11 +129,31 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " <Ctrl-L> redraws the screen and removes any search highlighting.
 nnoremap <C-L> :nohl<CR><C-L>"
 
+" kj or jk leaves insert mode
+let g:easyescape_chars = { "j": 1, "k": 1 }
+let g:easyescape_timeout = 130
+cnoremap jk <ESC>
+cnoremap kj <ESC>
+
 " Enter in normal mode add a new line
 nmap <Enter> o<Esc>
 
 " Space insert space in normal mode as in insert mode
 nnoremap space i<space><esc>
+
+" Print current date
+nnoremap <C-P><C-D> :exe "normal o" . strftime("'%F %T'")<CR>
+
+" Compare 2 dates
+nnoremap <C-P><C-M> :.,+1w !xargs datediff --format='\%M:\%S mn'<CR>
+
+" Middle clic paste at mouse position
+inoremap <MiddleMouse> <LeftMouse><MiddleMouse>
+
+" Ctrl-b moves cursor at last position
+noremap <C-b> ``
+
+" TODO: Remap C-h C-j C-k C-l as pg up/down etc
 
 
 " highlight search

@@ -1,0 +1,24 @@
+# Create git repo
+git clone https://github.com/ImprovIT/portfolio.git
+cd portfolio
+git remote add origin git@github.com:Purgator/portfolio.git
+curl -u 'Purgator' https://api.github.com/user/repos -d '{"name":"portfolio"}'
+
+# Edit html files...
+
+# Commit and push
+git checkout -b master
+git add *
+git commit -m 'First commit'
+git push --set-upstream origin master
+
+# Create bran gh-pages
+git checkout -b gh-pages
+git push --set-upstream origin gh-pages
+
+# Build and Deploy app
+npm install -g @angular/cli
+npm i -g angular-cli-ghpages
+
+ng build --prod --base-href "https://Purgator.github.io/portfolio/"
+ngh --message="First deploy" --branch=gh-pages
